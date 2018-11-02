@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Benutzerverwaltung</h1>
+    </div>
+</div>
+<!--
+<button type="button" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Hinzufügen</button>
+
+<br>
+
+<br>
+-->
+<table class="table table-striped">
+   <thead>
+      <tr>
+      <th>Nachname</th>
+      <th>Vorname</th>
+      <th>Email</th>
+      <th></th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr ng-repeat="user in $ctrl.Users">
+      <td>{{user.last_name}}</td>
+      <td>{{user.first_name}}</td>
+      <td>{{user.email_address}}</td>
+      <td><button type="button" class="btn btn-primary btn-xs" ui-tooltip="Bearbeiten" ng-show="false"><i class="glyphicon glyphicon-edit"></i></button></td>
+      </tr>
+   </tbody>
+</table>

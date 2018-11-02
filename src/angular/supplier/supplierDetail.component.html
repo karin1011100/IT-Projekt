@@ -1,0 +1,44 @@
+<div style="min-height: 930px;">
+
+   <div class="row">
+      <div class="col-lg-12">
+         <h1 class="page-header">Lieferant hinzufügen</h1>
+      </div>
+   </div>
+
+   <div class="panel panel-primary" style="max-width: 530px;">
+         <div class="panel-heading">Neuer Lieferant <small>(Mit * gekennzeichnete Felder sind Pflichtfelder)</small></div>
+         <div class="panel-body">
+               <form ng-submit="$ctrl.Save()">
+                     
+                  <label>Firmenname: *</label>
+                  <input class="form-control" type="text" ng-model="$ctrl.Company" style="max-width: 500px;" required>
+            
+                  <label>Vorname (Ansprechpartner):</label>
+                  <input class="form-control" type="text" ng-model="$ctrl.FirstName" style="max-width: 500px;">
+            
+                  <label>Nachname (Ansprechpartner): *</label>
+                  <input class="form-control" type="text" ng-model="$ctrl.LastName" style="max-width: 500px;" required>
+            
+                  <label>E-Mail: *</label>
+                  <input class="form-control" type="text" ng-model="$ctrl.Email" style="max-width: 500px;" required>
+            
+                  <label>Telefonnummer: </label>
+                  <input class="form-control" type="text" ng-model="$ctrl.MobileNumber" style="max-width: 500px;">
+            
+                  <label>Adresse: </label>
+                  <input class="form-control" type="text" ng-model="$ctrl.Address" style="max-width: 500px;">
+            
+                  <label>Stadt: </label>
+                  <input class="form-control" type="text" ng-model="$ctrl.City" style="max-width: 500px;">
+                  
+                  <br>
+                     
+                  <button class="btn btn-primary" type="submit">Hinzufügen</button>
+               </form>
+         </div>
+      </div>
+
+   
+
+</div>

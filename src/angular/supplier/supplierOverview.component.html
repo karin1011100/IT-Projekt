@@ -1,0 +1,41 @@
+<div class="row">
+   <div class="col-lg-12">
+       <h1 class="page-header">Lieferanten&uuml;bersicht</h1>
+   </div>
+</div>
+
+<div class="alert alert-success" ng-show="$ctrl.NewRating">
+   <strong>Neue Bewertung wurde gespeichert!</strong>
+</div>
+
+<a href="#!/supplier/detail" class="button btn btn-success"><i class="glyphicon glyphicon-plus"></i> Hinzuf&uuml;gen</a>
+
+<input type="text" class="form-control pull-right" ng-model="$ctrl.SupplierSearch" placeholder="Lieferant suchen" style="width: 400px; display: inline-block;">
+
+<br>
+
+<table class="table table-striped">
+  <thead>
+     <tr>
+     <th>Firmenname</th>
+     <th>Ansprechpartner</th>
+     <th>Email</th>
+     <th>Telefonnummer</th>
+     <th>Adresse</th>
+     <th>Stadt</th>
+     </tr>
+  </thead>
+  <tbody>
+     <tr ng-repeat="supplier in $ctrl.Suppliers | filter:{company: $ctrl.SupplierSearch}">
+         <td><a href="#!/supplier/{{supplier.id}}">{{supplier.company}}</a></td>
+         <td>{{supplier.first_name}} {{supplier.last_name}}</td>
+         <td>{{supplier.email_address}}</td>
+         <td>{{supplier.business_phone}}</td>
+         <td>{{supplier.address}}</td>
+         <td>{{supplier.city}}</td>
+         <td><button type="button" class="btn btn-primary"><i class="fa fa-bar-chart"></i></button></td>
+         <td><button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i></button></td>
+         <td><button type="button" class="btn btn-primary" ng-click="$ctrl.deleteSupplier(supplier.id)"><i class="fa fa-remove"></i></button></td>
+     </tr>
+  </tbody>
+</table>

@@ -1,0 +1,83 @@
+<div class="modal-header" style="background-color: #3b5998; color: white;">
+   <h3 class="modal-title" id="modal-title">Lieferant bewerten</h3>
+</div>
+
+<form ng-submit="$ctrl.Save()">
+
+   <div class="modal-body" id="modal-body" style="margin-left: 10px; margin-right: 10px;">
+      <div class="row">
+         <!--<select ng-model="$ctrl.SelectedSupplier" class="form-control" required>
+            <option ng-repeat="supplier in $ctrl.Suppliers" value="{{supplier.id}}">{{supplier.company}}</option>
+         </select>-->
+         <select name="selectSupplier"
+                  class="form-control"
+                  ng-model="$ctrl.SelectedSupplier"
+                  ng-options="supplier.id as supplier.company for supplier in $ctrl.Suppliers"
+                  required>
+            <option value="">Lieferant auswählen</option>      
+         </select>
+      </div>
+      <br>
+      <div class="row" style="padding-top: 8px; padding-bottom: 8px; border-top: 1px solid #ddd">
+         <label style="width: 170px; padding-left: 5px;"></label>
+         <div style="display: inline-block; font-size: 12px; width: 210px;">sehr schlecht</div>
+         <div style="display: inline-block; font-size: 12px;">sehr gut</div>
+      </div>
+      <div class="row" style="background-color: #f9f9f9; padding-top: 8px; padding-bottom: 8px; border-top: 1px solid #ddd">
+         <label style="width: 200px; padding-left: 5px;">Preis</label>
+            <input type="radio" name="price" ng-model="$ctrl.Price" value="1" required> 1
+            <input type="radio" name="price" ng-model="$ctrl.Price" value="2" style="margin-left: 20px;"> 2
+            <input type="radio" name="price" ng-model="$ctrl.Price" value="3" style="margin-left: 20px;"> 3
+            <input type="radio" name="price" ng-model="$ctrl.Price" value="4" style="margin-left: 20px;"> 4
+            <input type="radio" name="price" ng-model="$ctrl.Price" value="5" style="margin-left: 20px;"> 5
+      </div>
+      <div class="row" style="padding-top: 8px; padding-bottom: 8px; border-top: 1px solid #ddd">
+         <label style="width: 200px; padding-left: 5px;">Service</label>
+            <input type="radio" name="service" ng-model="$ctrl.Service" value="1" required> 1
+            <input type="radio" name="service" ng-model="$ctrl.Service" value="2" style="margin-left: 20px;"> 2
+            <input type="radio" name="service" ng-model="$ctrl.Service" value="3" style="margin-left: 20px;"> 3
+            <input type="radio" name="service" ng-model="$ctrl.Service" value="4" style="margin-left: 20px;"> 4
+            <input type="radio" name="service" ng-model="$ctrl.Service" value="5" style="margin-left: 20px;"> 5
+      </div>
+      <div class="row" style="background-color: #f9f9f9; padding-top: 8px; padding-bottom: 8px; border-top: 1px solid #ddd">
+         <label style="width: 200px; padding-left: 5px;">Kundenservice</label>
+            <input type="radio" name="customerservice" ng-model="$ctrl.CustomerService" value="1" required> 1
+            <input type="radio" name="customerservice" ng-model="$ctrl.CustomerService" value="2" style="margin-left: 20px;"> 2
+            <input type="radio" name="customerservice" ng-model="$ctrl.CustomerService" value="3" style="margin-left: 20px;"> 3
+            <input type="radio" name="customerservice" ng-model="$ctrl.CustomerService" value="4" style="margin-left: 20px;"> 4
+            <input type="radio" name="customerservice" ng-model="$ctrl.CustomerService" value="5" style="margin-left: 20px;"> 5
+      </div>
+      <div class="row" style="padding-top: 8px; padding-bottom: 8px; border-top: 1px solid #ddd">
+         <label style="width: 200px; padding-left: 5px;">Lieferzeit</label>
+            <input type="radio" name="deliverytime" ng-model="$ctrl.DeliveryTime" value="1" required> 1
+            <input type="radio" name="deliverytime" ng-model="$ctrl.DeliveryTime" value="2" style="margin-left: 20px;"> 2
+            <input type="radio" name="deliverytime" ng-model="$ctrl.DeliveryTime" value="3" style="margin-left: 20px;"> 3
+            <input type="radio" name="deliverytime" ng-model="$ctrl.DeliveryTime" value="4" style="margin-left: 20px;"> 4
+            <input type="radio" name="deliverytime" ng-model="$ctrl.DeliveryTime" value="5" style="margin-left: 20px;"> 5
+      </div>
+      <div class="row" style="background-color: #f9f9f9; padding-top: 8px; padding-bottom: 8px; border-top: 1px solid #ddd">
+         <label style="width: 200px; padding-left: 5px;">Zustand</label>
+            <input type="radio" name="deliverystate" ng-model="$ctrl.DeliveryState" value="1" required> 1
+            <input type="radio" name="deliverystate" ng-model="$ctrl.DeliveryState" value="2" style="margin-left: 20px;"> 2
+            <input type="radio" name="deliverystate" ng-model="$ctrl.DeliveryState" value="3" style="margin-left: 20px;"> 3
+            <input type="radio" name="deliverystate" ng-model="$ctrl.DeliveryState" value="4" style="margin-left: 20px;"> 4
+            <input type="radio" name="deliverystate" ng-model="$ctrl.DeliveryState" value="5" style="margin-left: 20px;"> 5
+      </div>
+      <div class="row" style="padding-top: 8px; padding-bottom: 8px; border-top: 1px solid #ddd">
+         <label style="width: 200px; padding-left: 5px;">PÃ¼nktlichkeit</label>
+            <input type="radio" name="punctual" ng-model="$ctrl.Punctual" value="1" required> 1
+            <input type="radio" name="punctual" ng-model="$ctrl.Punctual" value="2" style="margin-left: 20px;"> 2
+            <input type="radio" name="punctual" ng-model="$ctrl.Punctual" value="3" style="margin-left: 20px;"> 3
+            <input type="radio" name="punctual" ng-model="$ctrl.Punctual" value="4" style="margin-left: 20px;"> 4
+            <input type="radio" name="punctual" ng-model="$ctrl.Punctual" value="5" style="margin-left: 20px;"> 5
+      </div>
+
+      
+   </div>
+
+   <div class="modal-footer" style="background-color: #e9ebee; color: white;">
+      <button class="btn btn-success" type="submit"><i class="fa fa-check" aria-hidden="true"></i></button>
+      <button class="btn btn-danger" type="button" ng-click="$ctrl.Cancel()"><i class="fa fa-times" aria-hidden="true"></i></button>
+   </div>
+
+</form>
